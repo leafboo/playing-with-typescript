@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(16, 16, 16);
+}
+button {
+  background-color: rgb(29, 68, 197);
+  color: white;
+  border: none;
+  padding: .5rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+button:hover {
+  background-color: rgb(18, 41, 115);
+  color: rgb(214, 214, 214);
+}
+
+.description {
+  color: rgb(208, 208, 208);
+}
