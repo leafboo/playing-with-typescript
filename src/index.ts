@@ -1,19 +1,21 @@
 const descriptionElement = document.querySelector('.description')
+const yoneyamaPostsElement = document.querySelector('.yoneyamaPosts')
 const pressMeElement = document.querySelector('.pressMe')
 console.log('hello')
 
 if (descriptionElement && pressMeElement) { 
   pressMeElement?.addEventListener('click', () => {
     descriptionElement.textContent = "You pressed the button"
-    fetchData()
   })
 }
+
+yoneyamaPostsElement?.addEventListener('click', fetchData)
 
 
 // api calls
 async function fetchData() {
   try {
-    const response = await fetch('https://danbooru.donmai.us/artists/67359.json')
+    const response = await fetch('https://danbooru.donmai.us/posts.json?tags=yoneyama_mai')
 
     const data: any = await response.json()
     console.log(data)

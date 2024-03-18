@@ -9,19 +9,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const descriptionElement = document.querySelector('.description');
+const yoneyamaPostsElement = document.querySelector('.yoneyamaPosts');
 const pressMeElement = document.querySelector('.pressMe');
 console.log('hello');
 if (descriptionElement && pressMeElement) {
     pressMeElement === null || pressMeElement === void 0 ? void 0 : pressMeElement.addEventListener('click', () => {
         descriptionElement.textContent = "You pressed the button";
-        fetchData();
     });
 }
+yoneyamaPostsElement === null || yoneyamaPostsElement === void 0 ? void 0 : yoneyamaPostsElement.addEventListener('click', fetchData);
 // api calls
 function fetchData() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('https://danbooru.donmai.us/artists/67359.json');
+            const response = yield fetch('https://danbooru.donmai.us/posts.json?tags=yoneyama_mai');
             const data = yield response.json();
             console.log(data);
         }
